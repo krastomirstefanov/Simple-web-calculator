@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module"></script>
 </head>
 <body>
     <h1>Hello to our web calculator! </h1>
@@ -20,65 +21,11 @@
         <input type="number" placeholder="Enter second number" id="secondNum">    
     </div>
     <br>
-    <button id="resultBtn" onclick="calculator()" disabled="true">Result</button>
+    <button id="resultBtn" disabled="true">Result</button>
 
     <div class="" id="result">
     </div>
     <br>
-    <button id="clear" onclick="clearInput()">Clear</button>
-    <script>
-
-        const firstNumInput = document.getElementById('firstNum');
-        const secondNumInput = document.getElementById('secondNum');
-        const resultBtn = document.getElementById('resultBtn'); 
-
-        const updateButtonState = () => {
-            resultBtn.disabled = firstNumInput.value === '' || secondNumInput.value === '';
-        };
-
-        firstNumInput.addEventListener('input', updateButtonState);
-        secondNumInput.addEventListener('input', updateButtonState);
-        const calculator = () => {
-            const firstNum = firstNumInput.value;
-            const secondNum = secondNumInput.value;
-            const operator = document.getElementById('operator').value;
-            let result = 0; 
-            
-            if(firstNum.value !== '' && secondNum.value !== '') {
-                
-                resultBtn.disabled = false;
-            }
-            
-            switch (operator) {
-                case '+':
-                    result = +firstNum + +secondNum;
-                    break;
-                case '-':
-                    result = +firstNum - +secondNum;
-                    break;
-                case '*':
-                    result = +firstNum * +secondNum;
-                    break;
-                case '/':
-                    result = +firstNum / +secondNum;
-                    break;
-                default:
-                    break;
-            }
-
-         
-
-            document.getElementById('result').innerText = `The result is ${result}`;
-        }
-
-        const clearInput = () => {
-            const clearBtn = document.getElementById('clear');
-
-            firstNumInput.value = '';
-            secondNumInput.value = '';
-            document.getElementById('result').innerText = '';
-            updateButtonState();
-        }
-    </script>
+    <button id="clear">Clear</button>
 </body>
 </html>
