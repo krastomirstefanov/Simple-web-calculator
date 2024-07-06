@@ -2,6 +2,9 @@ const firstNumInput = document.getElementById('firstNum');
 const secondNumInput = document.getElementById('secondNum');
 const resultBtn = document.getElementById('resultBtn'); 
 const clearBtn = document.getElementById('clear');
+const welcomeScreen = document.getElementById('welcomeScreen');
+const startBtn = document.getElementById('startBtn');
+const calculatorScreen = document.getElementById('calculatorScreen');
 
 const updateButtonState = () => {
     resultBtn.disabled = firstNumInput.value === '' || secondNumInput.value === '';
@@ -49,5 +52,14 @@ clearBtn.addEventListener('click',() => {
     secondNumInput.value = '';
     document.getElementById('result').innerText = '';
     updateButtonState();
-})
+});
+
+startBtn.addEventListener('click', () => {
+    welcomeScreen.classList.add('fadeOut');
+    setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+        calculatorScreen.style.display = 'block';
+        calculatorScreen.classList.add('fadeIn');
+    }, 1000);
+});
 

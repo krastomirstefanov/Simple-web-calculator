@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online calculator</title>
+    <title>Online Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="module"></script>
 </head>
 <body>
-    <h1>Hello to our web calculator! </h1>
-
-    <div class="calculator">
-        <input type="number" placeholder="Enter first number" id="firstNum">
-        <select name="operator" id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
-        <input type="number" placeholder="Enter second number" id="secondNum">    
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1>Welcome to our web calculator!</h1>
+        <button id="startBtn">Start</button>
     </div>
-    <br>
-    <button id="resultBtn" disabled="true">Result</button>
 
-    <div class="" id="result">
+    <div class="calculator-screen" id="calculatorScreen" style="display: none;">
+        <h1>Hello to our web calculator!</h1>
+        <div class="calculator">
+            <input type="number" placeholder="Enter first number" id="firstNum">
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" placeholder="Enter second number" id="secondNum">    
+        </div>
+        <br>
+        <button id="resultBtn" disabled>Result</button>
+
+        <div id="result"></div>
+        <br>
+        <button id="clear">Clear</button>
     </div>
-    <br>
-    <button id="clear">Clear</button>
 </body>
 </html>

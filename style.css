@@ -1,9 +1,108 @@
-h1{
-    font-family: Arial, Helvetica, sans-serif;
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    background-color: #16cc86;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.welcome-screen, .calculator-screen {
     text-align: center;
 }
-input{
-    text-align: center;
-    justify-content: center;
+
+.welcome-screen {
+    animation: fadeIn 2s ease-out;
+}
+
+.calculator-screen {
+    animation: fadeOut 1s ease-out;
+    display: none;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.calculator input, .calculator select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button#resultBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button#clear {
+    background-color: #f44336;
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    .calculator {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .calculator input, .calculator select {
+        margin: 10px;
+        flex: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
